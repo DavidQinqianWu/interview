@@ -1,0 +1,17 @@
+{
+	"name": "interview",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"vuepress": "^1.8.2"
+	},
+	"scripts": {
+		"docs:dev": "vuepress dev docs",
+		"docs:build": "vuepress build docs",
+		"docs:deploy": "gh-pages -d docs/dist"
+	}
+}
