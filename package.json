@@ -11,9 +11,8 @@
 	},
 	"scripts": {
 		"docs:dev": "vuepress dev docs",
-		// 先执行 build
+
 		"docs:build": "vuepress build docs",
-		// 在执行 deploy 会自动更新到gitpage
 		"docs:deploy": "gh-pages -d dist"
 	},
 	"devDependencies": {
