@@ -4,14 +4,22 @@
 
 ### 输入一个数组,随机打乱并输出
 
-> 输入一个数组,随机打乱他们的顺序
+> 核心思路就是我们在排列的时候, 我们从原来的数组中随机抽取该位置上的数组
 
 ```js
 function randomArray(arrayInput) {
-	let result = [];
-
-	return result;
+	for (let i = 0; i < arrayInput.length; i++) {
+		// 从原来的数组中随机挑取
+		let index = parseInt(Math.radom() * (arrayInput.length - 1));
+		let tempValue = arrayInput[i];
+		// 把数组随机位置上的元素给跳出来, 然后把第 i 的先给拿出来
+		arrayInput[i] = arrayInput[index];
+		// 调换位置
+		arrayInput[index] = tempValue;
+	}
+	return arrayInput;
 }
+let newArray = randomArray([1, 2, 3, 4, 5]);
 ```
 
 ### 选择排序
@@ -48,7 +56,12 @@ selectSort([2, 5, 4, 3, 8, 6, 4]);
 ### 链表
 
 1. 链表的插入和删除还有更新都是 `O(1)`, 指的是当我们已经知道前驱节点之后, 我们要删除前驱节点指向的下一个节点的, 这个时候才是 `O(1)`.
+
+   > void remove(Node *list, Node *previousNodeToBeDeleted), 这个时候才是 O(1)
+
 2. 如果用链表让我们去删除整个数据中的的指定的那个节点, 那就是应该 `O(n)`.
+
+   > void remove(Node* list, Node *pNodeToBeDeleted)
 
 ## 数组
 
