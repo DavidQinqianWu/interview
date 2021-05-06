@@ -161,12 +161,17 @@ d）在前面三个过程都没获取到的情况下，就递归地去域名服�
 
 1. 拿到请求的 html 文件
 2. 解析 html, 同时如果有引用, 就那么就去下载我们的引用(js 文件, css 文件)
-3. 生成 html DOM 树, 生成 CSS 渲染树
+3. 生成 html DOM 树 (document), 生成 CSS 渲染树(styleSheets document)
 4. 结合 两个树生成一个 html 树
 5. 计算位置和尺寸(重绘)
 6. 渲染呈现界面 (重排)
 
 ![浏览器工作流程](./img/exploer.png)
+
+### 如何在 chrome 中查看 css 有关内容
+
+1. 在 inspection 中的 Elements 按钮, 我们的 style 标签下面会有该 element 的 style
+2. element 的 style 中的来源如果是 userAgent 代表的是使用的是默认来源
 
 ## 重绘与重排
 
