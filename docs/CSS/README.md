@@ -10,53 +10,53 @@
 
 ```js
 (function flexible(window, document) {
-	var docEl = document.documentElement;
-	// 获得分辨率和物理尺寸像素比
-	var dpr = window.devicePixelRatio || 1;
+  var docEl = document.documentElement;
+  // 获得分辨率和物理尺寸像素比
+  var dpr = window.devicePixelRatio || 1;
 
-	// adjust body font size
-	function setBodyFontSize() {
-		if (document.body) {
-			document.body.style.fontSize = 12 * dpr + "px";
-		} else {
-			document.addEventListener("DOMContentLoaded", setBodyFontSize);
-		}
-	}
-	// 矫正
-	setBodyFontSize();
+  // adjust body font size
+  function setBodyFontSize() {
+    if (document.body) {
+      document.body.style.fontSize = 12 * dpr + 'px';
+    } else {
+      document.addEventListener('DOMContentLoaded', setBodyFontSize);
+    }
+  }
+  // 矫正
+  setBodyFontSize();
 
-	// set 1rem = viewWidth / 10
-	function setRemUnit() {
-		// 这里可以根据设计的稿子来进行调整,
-		// 如果设计稿是 1336px, 我们可以设置为 13.36,
-		// 这样设计稿中的所有 px 都除以 100 就可以
-		var rem = docEl.clientWidth / 13.36;
-		docEl.style.fontSize = rem + "px";
-		console.log(rem);
-	}
+  // set 1rem = viewWidth / 10
+  function setRemUnit() {
+    // 这里可以根据设计的稿子来进行调整,
+    // 如果设计稿是 1336px, 我们可以设置为 13.36,
+    // 这样设计稿中的所有 px 都除以 100 就可以
+    var rem = docEl.clientWidth / 13.36;
+    docEl.style.fontSize = rem + 'px';
+    console.log(rem);
+  }
 
-	setRemUnit();
+  setRemUnit();
 
-	// reset rem unit on page resize
-	window.addEventListener("resize", setRemUnit);
-	window.addEventListener("pageshow", function(e) {
-		if (e.persisted) {
-			setRemUnit();
-		}
-	});
+  // reset rem unit on page resize
+  window.addEventListener('resize', setRemUnit);
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+      setRemUnit();
+    }
+  });
 
-	// detect 0.5px supports
-	if (dpr >= 2) {
-		var fakeBody = document.createElement("body");
-		var testElement = document.createElement("div");
-		testElement.style.border = ".5px solid transparent";
-		fakeBody.appendChild(testElement);
-		docEl.appendChild(fakeBody);
-		if (testElement.offsetHeight === 1) {
-			docEl.classList.add("hairlines");
-		}
-		docEl.removeChild(fakeBody);
-	}
+  // detect 0.5px supports
+  if (dpr >= 2) {
+    var fakeBody = document.createElement('body');
+    var testElement = document.createElement('div');
+    testElement.style.border = '.5px solid transparent';
+    fakeBody.appendChild(testElement);
+    docEl.appendChild(fakeBody);
+    if (testElement.offsetHeight === 1) {
+      docEl.classList.add('hairlines');
+    }
+    docEl.removeChild(fakeBody);
+  }
 })(window, document);
 ```
 
@@ -73,55 +73,74 @@ flex 布局
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-	<style>
-		.father1 {
-			width: 500px;
-			height: 500px;
-			background-color: red;
-		}
-		.son1 {
-			width: 300px;
-			height: 300px;
-			background-color: blue;
-			position: relative;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
+  <style>
+    .father1 {
+      width: 500px;
+      height: 500px;
+      background-color: red;
+    }
+    .son1 {
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-		.father2 {
-			margin-top: 50px;
-			width: 500px;
-			height: 500px;
-			background-color: yellow;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+    .father2 {
+      margin-top: 50px;
+      width: 500px;
+      height: 500px;
+      background-color: yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-		.son2 {
-			width: 300px;
-			height: 300px;
-			background-color: blue;
-		}
-	</style>
-	<body>
-		<div class="father1">
-			<div class="son1"></div>
-		</div>
+    .son2 {
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+    }
+  </style>
+  <body>
+    <div class="father1">
+      <div class="son1"></div>
+    </div>
 
-		<div class="father2">
-			<div class="son2"></div>
-		</div>
-	</body>
+    <div class="father2">
+      <div class="son2"></div>
+    </div>
+  </body>
 </html>
 ```
 
 ## 轮播图,雪碧图如何通过 css 定位
+
+## 三次贝塞尔曲线模拟抛物线
+
+```js
+function generateCubicBezier(v, g, t) {
+  let a = v / g;
+  let b = t + v / g;
+  return [
+    [
+      (a / 3 + (a + b) / 3 - a) / (b - a),
+      ((a * a) / 3 + (a * b * 2) / 3 - a * a) / (b * b - a * a),
+    ],
+    [
+      (b / 3 + (a + b) / 3 - a) / (b - a),
+      ((b * b) / 3 + (a * b * 2) / 3 - a * a) / (b * b - a * a),
+    ],
+  ];
+}
+```

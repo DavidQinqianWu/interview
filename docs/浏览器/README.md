@@ -256,3 +256,40 @@ d）在前面三个过程都没获取到的情况下，就递归地去域名服�
 
 > 1. 引入 worker.js
 > 2. 可以实现多标签, iframe 共同使用. sharedWorker 可以在是被多个 window 共同使用,但是必须保证这些标签页是同源的(相同的协议, 主机和端口)
+
+## 浏览器中的 DOM API
+
+对于浏览器而言,所有的节点都是 node 节点, 而 Dom api 就是给我提供这样的 api 去操纵这些 node
+
+### childNodes vs children
+
+- childNode 是所有的 children node 节点(文本节点, 空白节点(null), element 节点, comment 节点)
+
+- children 是特指所有 element 属性的 node 节点(排除了文本节点, 空白节点, comment 节点)
+
+### 其他高级 Api
+
+- compareDocumentPosition : 是一个用于比较两个节点中关系的函数
+- contains: 检查一个节点是否包含另一个节点的函数
+- isEqualNode: 检查两个节点是不是完全相同(还是两个节点, 只是他们是不是一样的, ==)(相当于检查是不是双胞胎)
+- isSameNode: 检查两个节点是不是同一个节点(===完全可以代替)(相当于检查是不是同一个人)
+- cloneNode: 复制一个节点, 如果参数为 true, 则连同子元素做深拷贝
+
+### RangeApi
+
+- `range.extractContents()` 可以得到 fragment, fragment 可以做很多操作
+- `range()`函数可以把 dom 节点拿下来, 然后操作这段 fragment, 这样不会频繁引起重绘和重排, 然后再把 fragment 给添加上去
+
+### cssApi
+
+- `document.styleSheets` 返回一个列表, 一个 css 文件就是一个项 或者一个 css link 就是一项
+- `getComputedStyle` 用来获取当时作用在 dom 上的所有样式, 所以当我们需要获取一些中间状态的 css 例如, 动画某一瞬间的动画设置, 或者拖拽, 可以用 getComputedStyle 非常好用
+- `getClientRects()` 用来获取该 dom 里面的所有的盒
+- `getBoundingClientRect` 用来获取该 dom 的包裹所有的盒的最外面的盒子
+
+## 浏览器中的 冒泡和捕获
+
+### Dom0 级和 Dom2 级事件
+
+- dom0 级事件 都是以 on 为开头的事件, 如果一个 div 有多个 相同的 dom0 级事件(例如 onclick) 会覆盖,只执行最后一个 dom0 级事件, Dom0 级之后冒泡阶段, 无法定义捕获
+- dom2 级事件,则不会付过, 按顺序执行, 可以定义捕获和冒泡
