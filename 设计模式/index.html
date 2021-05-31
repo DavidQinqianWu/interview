@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常用设计模式 | 面试总结学习</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="每天记录一些学习的关于面试的新知识">
+    
+    <link rel="preload" href="/interview/assets/css/0.styles.0d8df7ee.css" as="style"><link rel="preload" href="/interview/assets/js/app.4760c636.js" as="script"><link rel="preload" href="/interview/assets/js/2.fcc25b9e.js" as="script"><link rel="preload" href="/interview/assets/js/18.7f068fb6.js" as="script"><link rel="prefetch" href="/interview/assets/js/10.81c667ae.js"><link rel="prefetch" href="/interview/assets/js/11.808c1a58.js"><link rel="prefetch" href="/interview/assets/js/12.ad8bdd11.js"><link rel="prefetch" href="/interview/assets/js/13.48f39ef1.js"><link rel="prefetch" href="/interview/assets/js/14.1b787f32.js"><link rel="prefetch" href="/interview/assets/js/15.44d78914.js"><link rel="prefetch" href="/interview/assets/js/16.5af80b4c.js"><link rel="prefetch" href="/interview/assets/js/17.22b7d9ce.js"><link rel="prefetch" href="/interview/assets/js/3.1d9d2a9b.js"><link rel="prefetch" href="/interview/assets/js/4.c4e98d15.js"><link rel="prefetch" href="/interview/assets/js/5.ca010a6a.js"><link rel="prefetch" href="/interview/assets/js/6.3e3cc88d.js"><link rel="prefetch" href="/interview/assets/js/7.5283a369.js"><link rel="prefetch" href="/interview/assets/js/8.604d7003.js"><link rel="prefetch" href="/interview/assets/js/9.51bb396a.js">
+    <link rel="stylesheet" href="/interview/assets/css/0.styles.0d8df7ee.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/interview/" class="home-link router-link-active"><!----> <span class="site-name">面试总结学习</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/interview/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/interview/CSS/" class="nav-link">
+  CSS 类型
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="网络与浏览器" class="dropdown-title"><span class="title">网络与浏览器</span> <span class="arrow down"></span></button> <button type="button" aria-label="网络与浏览器" class="mobile-dropdown-title"><span class="title">网络与浏览器</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/网络/" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/interview/浏览器/" class="nav-link">
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="js/ts" class="dropdown-title"><span class="title">js/ts</span> <span class="arrow down"></span></button> <button type="button" aria-label="js/ts" class="mobile-dropdown-title"><span class="title">js/ts</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/language/js.html" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/interview/language/ts.html" class="nav-link">
+  ts
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/frame/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/interview/frame/react.html" class="nav-link">
+  react
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/设计模式/" class="nav-link">
+  设计模式
+</a></div><div class="nav-item"><a href="/interview/工作积累/" class="nav-link">
+  工作积累
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="源码学习" class="dropdown-title"><span class="title">源码学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="源码学习" class="mobile-dropdown-title"><span class="title">源码学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/源码学习/vue3.html" class="nav-link">
+  vue3
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/interview/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/interview/CSS/" class="nav-link">
+  CSS 类型
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="网络与浏览器" class="dropdown-title"><span class="title">网络与浏览器</span> <span class="arrow down"></span></button> <button type="button" aria-label="网络与浏览器" class="mobile-dropdown-title"><span class="title">网络与浏览器</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/网络/" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/interview/浏览器/" class="nav-link">
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="js/ts" class="dropdown-title"><span class="title">js/ts</span> <span class="arrow down"></span></button> <button type="button" aria-label="js/ts" class="mobile-dropdown-title"><span class="title">js/ts</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/language/js.html" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/interview/language/ts.html" class="nav-link">
+  ts
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/frame/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/interview/frame/react.html" class="nav-link">
+  react
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/设计模式/" class="nav-link">
+  设计模式
+</a></div><div class="nav-item"><a href="/interview/工作积累/" class="nav-link">
+  工作积累
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="源码学习" class="dropdown-title"><span class="title">源码学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="源码学习" class="mobile-dropdown-title"><span class="title">源码学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/源码学习/vue3.html" class="nav-link">
+  vue3
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>常用设计模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/interview/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#创建型模式" class="sidebar-link">创建型模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/interview/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#简单工厂模式" class="sidebar-link">简单工厂模式</a></li><li class="sidebar-sub-header"><a href="/interview/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#抽象工厂模式" class="sidebar-link">抽象工厂模式</a></li></ul></li><li><a href="/interview/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#结构型模式" class="sidebar-link">结构型模式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/interview/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#行为型模式" class="sidebar-link">行为型模式</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="常用设计模式"><a href="#常用设计模式" class="header-anchor">#</a> 常用设计模式</h1> <p><a href="https://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html" target="_blank" rel="noopener noreferrer">作者文章 git<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="创建型模式"><a href="#创建型模式" class="header-anchor">#</a> 创建型模式</h2> <h3 id="简单工厂模式"><a href="#简单工厂模式" class="header-anchor">#</a> 简单工厂模式</h3> <blockquote><p>通过不同的入参, 来生产不同的实例化对象</p></blockquote> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">import</span> ProductA <span class="token keyword">from</span> <span class="token string">'./ProductA'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ProductB <span class="token keyword">from</span> <span class="token string">'./ProductB'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Factory</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> <span class="token function">createProduct</span><span class="token punctuation">(</span>para<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>para <span class="token operator">===</span> <span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ProductA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>para <span class="token operator">=</span> <span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ProductB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 构建不一样的产品</span>
+<span class="token keyword">let</span> productA <span class="token operator">=</span> Factory<span class="token punctuation">.</span><span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> productB <span class="token operator">=</span> Factory<span class="token punctuation">.</span><span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="抽象工厂模式"><a href="#抽象工厂模式" class="header-anchor">#</a> 抽象工厂模式</h3> <blockquote><p>在简单工厂模式的基础上在把工厂给抽象化, 这样做的好处就是我们的工厂也就能各种各样的变化, 创造出不通的子工厂,这样就无形之中创建出来很多个不一样的工厂, 实现工厂的多态</p></blockquote> <h2 id="结构型模式"><a href="#结构型模式" class="header-anchor">#</a> 结构型模式</h2> <h2 id="行为型模式"><a href="#行为型模式" class="header-anchor">#</a> 行为型模式</h2></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/interview/assets/js/app.4760c636.js" defer></script><script src="/interview/assets/js/2.fcc25b9e.js" defer></script><script src="/interview/assets/js/18.7f068fb6.js" defer></script>
+  </body>
+</html>
